@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.default-btn {
+  border-radius: $border-s;
+  padding: $button-padding-y $button-padding-x;
+  font-size: $font-size-md;
+  font-weight: $font-regular;
+  letter-spacing: $letter-spacing;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-var-1 {
+  background-color: $secondary-color-1;
+  color: $font-color-2;
+}
+
+.btn-var-2 {
+  background-color: $primary-color-2;
+  color: $font-color-1;
+}
