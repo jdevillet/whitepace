@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/utilities/_helpers.scss";
+import "../styles/components/_dropdown.scss";
 
 const Dropdown = () => {
+  const [isActive, setIsActive] = useState("");
+
+  function handleClick() {
+    setIsActive((prev) => (prev === "active" ? "" : "active"));
+  }
   return (
     <>
       <div className="dropdown">
-        <p>Products</p>
-        <ul className="hidden">
+        <p onClick={handleClick}>Products</p>
+        <ul className={`dropdown__menu ${isActive ? "" : "hidden"}`}>
           <li>Lorem</li>
           <li>Lorem</li>
           <li>Lorem</li>
@@ -22,4 +28,3 @@ const Dropdown = () => {
 };
 
 export default Dropdown;
-// onClick retirer la classe hidden sur le ul pour quil apparaisse en dessous de products

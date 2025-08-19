@@ -1,0 +1,13 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.dropdown {
+  border: 1px solid black;
+  position: relative;
+  cursor: pointer;
+
+  &__menu {
+    position: absolute;
+    background: goldenrod;
+  }
+}
