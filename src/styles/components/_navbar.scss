@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+@use "../base/reset" as *;
+
+.navbar {
+  display: flex;
+  padding: 0 52px;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-logo {
+    flex: 1;
+    max-width: 191px;
+    min-width: 134px;
+  }
+
+  .nav-buttons {
+    display: flex;
+    flex: 1;
+    gap: 24px;
+    max-width: 378px;
+  }
+}

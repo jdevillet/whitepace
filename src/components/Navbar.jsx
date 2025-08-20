@@ -2,16 +2,27 @@ import React from "react";
 import Dropdown from "./Dropdown";
 import logo from "../assets/img/logos/whitepace.svg";
 import Button from "./Button";
+import "../styles/components/_navbar.scss";
+import { FaChevronDown } from "react-icons/fa";
 
 const Navbar = () => {
   return (
-    <div className="Navbar">
+    <div className="navbar">
       <div className="nav-logo">
         <img src={logo} alt="logo of whitepace" />
       </div>
-      <ul>
+      <ul className="dropdown">
         <li>
-          <Dropdown />
+          <Dropdown dropdownText="Products" icon={<FaChevronDown />} />
+        </li>
+        <li>
+          <Dropdown dropdownText="Solutions" icon={<FaChevronDown />} />
+        </li>
+        <li>
+          <Dropdown dropdownText="Ressources" icon={<FaChevronDown />} />
+        </li>
+        <li>
+          <Dropdown dropdownText="Pricing" icon={<FaChevronDown />} />
         </li>
       </ul>
       <div className="nav-buttons">

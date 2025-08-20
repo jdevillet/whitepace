@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../styles/utilities/_helpers.scss";
 import "../styles/components/_dropdown.scss";
 
-const Dropdown = () => {
+const Dropdown = ({ dropdownText, icon }) => {
   const [isActive, setIsActive] = useState("");
 
   function handleClick() {
@@ -10,19 +10,20 @@ const Dropdown = () => {
   }
   return (
     <>
-      <div className="dropdown">
-        <p onClick={handleClick}>Products</p>
-        <ul className={`dropdown__menu ${isActive ? "" : "hidden"}`}>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-          <li>Lorem</li>
-        </ul>
-      </div>
+      <p className="dropdown__link" onClick={handleClick}>
+        <span>{dropdownText}</span>
+        {icon}
+      </p>
+      <ul className={`dropdown__menu ${isActive ? "" : "hidden"}`}>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+        <li>Lorem</li>
+      </ul>
     </>
   );
 };

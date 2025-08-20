@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+@use "../base/reset" as *;
+
+.header {
+  min-height: 56px;
+  height: 92px;
+  max-height: 92px;
+
+  background-color: vars.$primary-color-1;
+}
