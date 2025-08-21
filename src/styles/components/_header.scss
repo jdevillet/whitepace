@@ -3,9 +3,10 @@
 @use "../base/reset" as *;
 
 .header {
+  display: flex;
+  justify-content: center;
   min-height: 56px;
   height: 92px;
   max-height: 92px;
-
   background-color: vars.$primary-color-1;
 }

@@ -1,0 +1,33 @@
+@use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as *;
+@use "../base/reset" as *;
+
+.hamburger-container {
+  display: none;
+
+  .hamburger {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    z-index: 10;
+    cursor: pointer;
+
+    .burger {
+      width: 32px;
+      height: 4px;
+      background-color: vars.$secondary-color-3;
+      transform-origin: 1px;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+@media (max-width: 1152px) {
+  .hamburger-container {
+    display: flex;
+    margin-left: 10px;
+    z-index: 12;
+  }
+}

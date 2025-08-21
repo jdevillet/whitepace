@@ -4,7 +4,6 @@
 
 .dropdown {
   display: flex;
-  flex: 2;
   flex-direction: row;
   width: 100%;
   max-width: 473px;
@@ -27,5 +26,24 @@
   &__menu {
     position: absolute;
     background: goldenrod;
+  }
+}
+.mobile-dropdown-container {
+  transition: 200ms linear;
+
+  .mobile-dropdown {
+    position: absolute;
+  }
+}
+
+@media (max-width: 1152px) {
+  .dropdown {
+    display: none;
+    opacity: 0;
+  }
+}
+@media (min-width: 1152px) {
+  .mobile-dropdown-container {
+    display: none;
   }
 }

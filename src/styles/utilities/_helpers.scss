@@ -1,4 +1,17 @@
+.active {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
 .hidden {
+  transform: translateX(200px);
   opacity: 0;
   visibility: hidden;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
 }

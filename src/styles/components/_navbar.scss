@@ -5,21 +5,48 @@
 .navbar {
   display: flex;
   padding: 0 52px;
-  width: 100%;
+  max-width: 1400px;
   height: 100%;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
+  transition: all 200ms ease;
 
   .nav-logo {
-    flex: 1;
     max-width: 191px;
     min-width: 134px;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   .nav-buttons {
     display: flex;
-    flex: 1;
     gap: 24px;
     max-width: 378px;
+  }
+}
+
+@media (max-width: 1152px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    justify-items: stretch;
+    padding: 0 16px;
+
+    .nav-right {
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-buttons {
+    display: none !important;
   }
 }
