@@ -11,8 +11,8 @@ const Dropdown = ({ dropdownText, icon }) => {
   return (
     <>
       <p className="dropdown__link" onClick={handleClick}>
-        <span>{dropdownText}</span>
-        {icon}
+        {dropdownText}
+        <span className={isActive ? "rotate" : ""}>{icon}</span>
       </p>
       <ul className={`dropdown__menu ${isActive ? "" : "hidden"}`}>
         <li>Lorem</li>
@@ -29,3 +29,4 @@ const Dropdown = ({ dropdownText, icon }) => {
 };
 
 export default Dropdown;
+// TODO ul list css et trouver comment la personnaliser pour chaque theme

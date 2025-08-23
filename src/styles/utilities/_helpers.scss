@@ -15,3 +15,8 @@
     transform 0.3s ease,
     opacity 0.3s ease;
 }
+
+.rotate {
+  transform: rotate(180deg);
+  transition: 150ms ease;
+}
