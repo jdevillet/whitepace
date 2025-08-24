@@ -77,6 +77,7 @@ const Navbar = () => {
               id={key}
               title={key.charAt(0).toUpperCase() + key.slice(1)}
               items={items}
+              icon={<FaChevronDown />}
             />
           ))}
         </ul>

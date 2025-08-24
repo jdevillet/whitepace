@@ -12,13 +12,15 @@ const MobileDropdown = ({ id, title, items = [], icon }) => {
         value={title}
         className="dropdown-toggle"
       />{" "}
-      <span className="link-icon">{icon}</span>
       <label
         htmlFor={id}
         className="site-nav__link dropdown-action"
         aria-label={`Toggle ${title} Dropdown`}
       >
-        <span className="dropdown-toggle-text">{title}</span>
+        <span className="dropdown-toggle-text">
+          {title}
+          <span className="text-icon">{icon}</span>
+        </span>
       </label>
       <ul className="dropdown">
         {items.map((item, index) => (
@@ -34,4 +36,3 @@ const MobileDropdown = ({ id, title, items = [], icon }) => {
 };
 
 export default MobileDropdown;
-// TODO mobile nav
