@@ -7,7 +7,6 @@
   flex-direction: row;
   width: 100%;
   max-width: 473px;
-  position: relative;
   color: vars.$font-color-1;
   justify-content: space-around;
 
@@ -17,6 +16,7 @@
     align-items: center;
     gap: 0.5rem;
     cursor: pointer;
+    font-weight: vars.$font-regular;
     width: 100%;
     justify-content: space-between;
     user-select: none;
@@ -25,41 +25,64 @@
       font-size: vars.$font-size-xs;
     }
   }
+
   .dropdown__menu {
-  }
-
-  &__menu {
     position: absolute;
-    background: goldenrod;
-  }
-}
-.mobile-dropdown-container {
-  transition: 200ms linear;
-  position: absolute;
-  z-index: 20;
-  background: vars.$primary-color-1;
-  top: 92px;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: vars.$background-color;
+    color: vars.$font-color-3;
+    border-radius: vars.$border-s;
+    padding: 20px;
+    gap: 10px;
+    font-weight: vars.$font-regular;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+      opacity 200ms ease-in,
+      transform 200ms ease-in,
+      visibility 200ms ease-in;
 
-  .mobile-dropdown {
-    transform: translateY(-50%);
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
 
-    .dropdown__link {
-      font-size: vars.$font-size-lg;
-      color: vars.$font-color-1;
-      letter-spacing: vars.$letter-spacing;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-width: 225px;
-      margin: 5px 0;
-      & svg {
-        font-size: vars.$font-size-md;
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+    }
+
+    & li {
+      width: 100%;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 150ms ease-out;
+      position: relative;
+
+      &::before {
+        width: 3px;
+        height: 100%;
+        content: "";
+        background: vars.$primary-color-2;
+        top: 0;
+        left: -10px;
+        position: absolute;
+        opacity: 0;
+      }
+
+      &:hover {
+        transform: translateX(5px);
+
+        &::before {
+          opacity: 1;
+        }
       }
     }
   }
@@ -68,7 +91,12 @@
 @media (max-width: 1152px) {
   .dropdown {
     display: none;
-    opacity: 0;
+
+    &__menu .active {
+      max-height: 550px;
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 @media (min-width: 1152px) {
